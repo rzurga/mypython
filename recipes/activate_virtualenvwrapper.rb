@@ -15,7 +15,7 @@ node[:users].each do |user_id|
     user_uid = user_entry["uid"] || node[:machine][:uid]
     home_dir = user_entry["home"] || node[:machine][:home] || "/home/" + user_id
     dev_dir = user_entry["dev"] || node[:machine][:dev] || home_dir + "/dev"
-    virtualenvwrapper =  = user_entry["virtualenvwrapper"]
+    virtualenvwrapper = user_entry["virtualenvwrapper"]
     
     unless virtualenvwrapper.nil?
         bash "disable lock screen" do
