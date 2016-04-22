@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe "chef-solo-search"
+# include_recipe "chef-solo-search"
 
 node[:users].each do |user_id|
     user_entry = search(:users, "id:" + user_id).first
