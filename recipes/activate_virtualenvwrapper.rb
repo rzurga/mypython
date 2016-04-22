@@ -17,13 +17,13 @@ node[:users].each do |user_id|
     dev_dir = user_entry["dev"] || node[:machine][:dev] || home_dir + "/dev"
     virtualenvwrapper = user_entry["virtualenvwrapper"]
     
-    unless virtualenvwrapper.nil?
-        bash "activate virtualenvwrapper" do
-            user user_id
-            code "source virtualenvwrapper.sh"
-            action :run
-        end
-    end
+    # unless virtualenvwrapper.nil?
+    #     bash "activate virtualenvwrapper" do
+    #         user user_id
+    #         code "source virtualenvwrapper.sh"
+    #         action :run
+    #     end
+    # end
     
     # link dev_dir + '/virtualenv' do
     #     group group_name
