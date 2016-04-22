@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: python
-# Recipe:: activate_virtualenvwrapper.rb
+# Recipe:: activate_virtualenvwrapper
 #
 # Copyright 2016, rzurga (vagrant@zurga.com)
 #
@@ -17,7 +17,7 @@ node[:users].each do |user_id|
     dev_dir = user_entry["dev"] || node[:machine][:dev] || home_dir + "/dev"
     virtualenvwrapper = user_entry["virtualenvwrapper"]
     
-    unless virtualenvwrapper.nil? do
+    unless virtualenvwrapper.nil?
         bash "activate virtualenvwrapper" do
             user user_id
             code "source virtualenvwrapper.sh"
@@ -25,7 +25,7 @@ node[:users].each do |user_id|
         end
     end
     
-    link dev_dir + 'virtualenv' do
+    link dev_dir + '/virtualenv' do
         owner user_id
         to home_dir + '/.virtualenv'
     end
