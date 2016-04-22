@@ -25,8 +25,9 @@ node[:users].each do |user_id|
         end
     end
     
-    link dev_dir + '/virtualenv' do
-        owner user_id
-        to home_dir + '/.virtualenv'
-    end
+    # link dev_dir + '/virtualenv' do
+    #     group group_name
+    #     owner user_id
+    #     to home_dir + '/.virtualenv'
+    # end
 end
