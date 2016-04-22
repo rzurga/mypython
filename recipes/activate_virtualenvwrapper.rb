@@ -17,8 +17,8 @@ node[:users].each do |user_id|
     dev_dir = user_entry["dev"] || node[:machine][:dev] || home_dir + "/dev"
     virtualenvwrapper = user_entry["virtualenvwrapper"]
     
-    unless virtualenvwrapper.nil?
-        bash "disable lock screen" do
+    unless virtualenvwrapper.nil? do
+        bash "activate virtualenvwrapper" do
             user user_id
             code "source virtualenvwrapper.sh"
             action :run
