@@ -11,7 +11,7 @@ package "software-properties-common" do
   action :install
 end
 
-bash "install PyCharm" do
+bash "Install PyCharm" do
   user "root"
   code <<-EOD
     add-apt-repository -y ppa:mystic-mirage/pycharm
