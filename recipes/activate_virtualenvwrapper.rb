@@ -36,8 +36,8 @@ node[:users].each do |user_id|
     end
 end
 
-remote_file "/etc/profile.d/virtualenvwrapper.sh" do
+cookbook_file "/etc/profile.d/virtualenvwrapper.sh" do
     owner "root"
-    source "file:///vagrant/files/default/virtualenvwrapper.sh"
+    source "virtualenvwrapper.sh"
     action :create
 end

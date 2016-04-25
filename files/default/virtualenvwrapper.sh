@@ -1,1 +1,1 @@
-source /usr/local/bin/virtualenvwrapper.sh
+source virtualenvwrapper.sh
