@@ -35,3 +35,9 @@ node[:users].each do |user_id|
         to home_dir + '/.virtualenv'
     end
 end
+
+remote_file "/etc/profile.d/virtualenvwrapper.sh" do
+    owner "root"
+    source "file:///vagrant/files/default/virtualenvwrapper.sh"
+    action :create
+end
