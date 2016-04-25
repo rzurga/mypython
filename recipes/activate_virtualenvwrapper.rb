@@ -22,7 +22,7 @@ node[:users].each do |user_id|
             code <<-EOD
                 VIRTUALENVWRAPPER=$(which virtualenvwrapper.sh)
                 # Fix reference ${.sh.file} in line #95
-                sudo sed -i "s/{.sh.file}/{BASH}/g" $VIRTUALENVWRAPPER
+                sudo sed -i "s/{.sh.file}/BASH/g" $VIRTUALENVWRAPPER
                 sudo su - #{user_id} -c $VIRTUALENVWRAPPER
             EOD
             action :run
